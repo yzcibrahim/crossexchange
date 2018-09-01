@@ -1,0 +1,19 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 20BD-9036
+
+ Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange\crossexchange
+
+01.09.2018  22:56    <DIR>          .
+01.09.2018  22:56    <DIR>          ..
+01.09.2018  22:30               392 .gitignore
+01.09.2018  22:56                 0 1.txt
+01.09.2018  22:30               381 coverage-hits.txt
+01.09.2018  22:30            91.588 coverage.json
+01.09.2018  22:49                 0 cross-exchange-dotnet_ibrahimyazici.patch
+01.09.2018  22:42    <DIR>          CrossExchange
+01.09.2018  22:30             1.649 CrossExchange.sln
+01.09.2018  22:38    <DIR>          CrossExchange.Tests
+01.09.2018  22:55                 0 ibrahim.patch
+01.09.2018  22:30             4.251 Readme.txt
+               8 File(s)         98.261 bytes
+               4 Dir(s)  387.284.021.248 bytes free
