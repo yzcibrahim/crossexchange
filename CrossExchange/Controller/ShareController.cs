@@ -26,7 +26,7 @@ namespace CrossExchange.Controller
         [HttpGet("{symbol}/Latest")]
         public async Task<IActionResult> GetLatestPrice([FromRoute]string symbol)
         {
-            var share = await _shareRepository.Query().Where(x => x.Symbol.Equals(symbol)).FirstOrDefaultAsync();
+            var share = await _shareRepository.Query().Where(x => x.Symbol.Equals(symbol)).OrderByDescending(c=>c.TimeStamp).FirstOrDefaultAsync();
             return Ok(share?.Rate);
         }
 
@@ -39,8 +39,8 @@ namespace CrossExchange.Controller
             }
 
             await _shareRepository.InsertAsync(value);
-
-            return Created($"Share/{value.Id}", value);
+			
+			return Created($"Share/{value.Id}", value);
         }
         
     }

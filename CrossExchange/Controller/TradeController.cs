@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +23,7 @@ namespace CrossExchange.Controller
             _shareRepository = shareRepository;
             _tradeRepository = tradeRepository;
             _portfolioRepository = portfolioRepository;
+			
         }
 
 
@@ -34,7 +37,8 @@ namespace CrossExchange.Controller
 
 
         /*************************************************************************************************************************************
-        For a given portfolio, with all the registered shares you need to do a trade which could be either a BUY or SELL trade. For a particular trade keep following conditions in mind:
+        For a given portfolio, with all the registered shares you need to do a trade which could be either a BUY or SELL trade.
+		For a particular trade keep following conditions in mind:
 		BUY:
         a) The rate at which the shares will be bought will be the latest price in the database.
 		b) The share specified should be a registered one otherwise it should be considered a bad request. 
@@ -52,8 +56,55 @@ namespace CrossExchange.Controller
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]TradeModel model)
         {
-            return Created("Trade", model);
+
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			var trade = CastTrade(model);
+
+			var share =  _shareRepository.Query().Where(x => x.Symbol.Equals(trade.Symbol)).OrderByDescending(c => c.TimeStamp).FirstOrDefault();
+			
+			if (share == null)
+				return BadRequest("The Share could not be found");
+
+			var portfolio = _portfolioRepository.Query().Where(x => x.Id.Equals(trade.PortfolioId)).FirstOrDefault();
+
+			if (portfolio == null)
+				return BadRequest("The portfolio should be registerd");
+
+			trade.Price = share.Rate;
+
+			if (trade.Action == "SELL")
+			{
+				var trades=_tradeRepository.Query().Where(x => x.PortfolioId == trade.PortfolioId && x.Symbol == trade.Symbol).ToList();
+
+				int totalBuy = trades.Where(c=>c.Action=="BUY").Sum(x=>x.NoOfShares);
+				int totalSell = trades.Where(c => c.Action == "SELL").Sum(x=>x.NoOfShares);
+
+				if (totalBuy < totalSell + trade.NoOfShares)
+				{
+					int avaliableForSell = totalBuy - totalSell;
+					return BadRequest($"The number of shares is not sufficent. Avaliable share is  {avaliableForSell}");
+				}
+			}
+			
+			await _tradeRepository.InsertAsync(trade);
+			return Created("Trade", trade);
         }
-        
-    }
+
+		private Trade CastTrade(TradeModel model)
+		{
+			var res = new Trade();
+			
+			res.Action = model.Action;
+			res.NoOfShares = model.NoOfShares;
+			res.Price = 0;
+			res.Symbol = model.Symbol;
+			res.PortfolioId = model.PortfolioId;
+			return res;
+		}
+		
+	}
 }
