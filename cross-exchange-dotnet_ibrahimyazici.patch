@@ -1,0 +1,1453 @@
+From c9d2bb17c484a2247b216b48c6f3247290bd7d84 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+Date: Sat, 1 Sep 2018 22:52:04 +0300
+Subject: [PATCH 1/4] -
+
+---
+ CrossExchange/Startup.cs                  | 1 +
+ cross-exchange-dotnet_ibrahimyazici.patch | 0
+ 2 files changed, 1 insertion(+)
+ create mode 100644 cross-exchange-dotnet_ibrahimyazici.patch
+
+diff --git a/CrossExchange/Startup.cs b/CrossExchange/Startup.cs
+index f04ed6b..ae42270 100644
+--- a/CrossExchange/Startup.cs
++++ b/CrossExchange/Startup.cs
+@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
+ 
+ namespace CrossExchange
+ {
++    //comment1
+     public class Startup
+     {
+         public Startup(IConfiguration configuration)
+diff --git a/cross-exchange-dotnet_ibrahimyazici.patch b/cross-exchange-dotnet_ibrahimyazici.patch
+new file mode 100644
+index 0000000..e69de29
+-- 
+2.17.1.windows.2
+
+
+From dc6542da52804d474e278437d9213f5181a4d520 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+Date: Sat, 1 Sep 2018 22:56:43 +0300
+Subject: [PATCH 2/4] commit1
+
+---
+ 1.txt | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ create mode 100644 1.txt
+
+diff --git a/1.txt b/1.txt
+new file mode 100644
+index 0000000..bc0becd
+--- /dev/null
++++ b/1.txt
+@@ -0,0 +1,19 @@
++ Volume in drive C has no label.
++ Volume Serial Number is 20BD-9036
++
++ Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange\crossexchange
++
++01.09.2018  22:56    <DIR>          .
++01.09.2018  22:56    <DIR>          ..
++01.09.2018  22:30               392 .gitignore
++01.09.2018  22:56                 0 1.txt
++01.09.2018  22:30               381 coverage-hits.txt
++01.09.2018  22:30            91.588 coverage.json
++01.09.2018  22:49                 0 cross-exchange-dotnet_ibrahimyazici.patch
++01.09.2018  22:42    <DIR>          CrossExchange
++01.09.2018  22:30             1.649 CrossExchange.sln
++01.09.2018  22:38    <DIR>          CrossExchange.Tests
++01.09.2018  22:55                 0 ibrahim.patch
++01.09.2018  22:30             4.251 Readme.txt
++               8 File(s)         98.261 bytes
++               4 Dir(s)  387.284.021.248 bytes free
+-- 
+2.17.1.windows.2
+
+
+From 6d3a9c7b7749ff86e151edcee6477a515a291104 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+Date: Sun, 2 Sep 2018 14:35:59 +0300
+Subject: [PATCH 3/4] finalize
+
+---
+ 0001-bilgi.txt-was-added.patch                |  35 +++
+ 0002-bilgi-silindi.patch                      |  35 +++
+ 0003-.patch                                   |  29 +++
+ 0004-commit1.patch                            |  38 +++
+ 1.txt                                         |  19 --
+ .../CrossExchange.Tests.csproj                |   1 +
+ .../PortfolioControllerTests.cs               |  75 ++++++
+ CrossExchange.Tests/ShareControllerTests.cs   |  29 ++-
+ CrossExchange.Tests/TradeControllerTest.cs    | 136 ++++++++---
+ .../Controller/PortfolioController.cs         |   2 +-
+ CrossExchange/Controller/TradeController.cs   |   2 +-
+ CrossExchange/CrossExchange.csproj            |   1 +
+ coverage-hits.txt                             |  47 ++--
+ coverage.json                                 | 222 +++++++++---------
+ cross-exchange-dotnet_ibrahimyazici.patch     |   0
+ 15 files changed, 476 insertions(+), 195 deletions(-)
+ create mode 100644 0001-bilgi.txt-was-added.patch
+ create mode 100644 0002-bilgi-silindi.patch
+ create mode 100644 0003-.patch
+ create mode 100644 0004-commit1.patch
+ delete mode 100644 1.txt
+ create mode 100644 CrossExchange.Tests/PortfolioControllerTests.cs
+ delete mode 100644 cross-exchange-dotnet_ibrahimyazici.patch
+
+diff --git a/0001-bilgi.txt-was-added.patch b/0001-bilgi.txt-was-added.patch
+new file mode 100644
+index 0000000..8636cf7
+--- /dev/null
++++ b/0001-bilgi.txt-was-added.patch
+@@ -0,0 +1,35 @@
++From 133d096a0cdb286d18e03d27f5e92c2bcebf1dbb Mon Sep 17 00:00:00 2001
++From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
++Date: Sat, 1 Sep 2018 22:20:51 +0300
++Subject: [PATCH 1/4] bilgi.txt was added!
++
++---
++ bilgi.txt | 16 ++++++++++++++++
++ 1 file changed, 16 insertions(+)
++ create mode 100644 bilgi.txt
++
++diff --git a/bilgi.txt b/bilgi.txt
++new file mode 100644
++index 0000000..295043c
++--- /dev/null
+++++ b/bilgi.txt
++@@ -0,0 +1,16 @@
+++ Volume in drive C has no label.
+++ Volume Serial Number is 20BD-9036
+++
+++ Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange
+++
+++01.09.2018  22:17    <DIR>          .
+++01.09.2018  22:17    <DIR>          ..
+++01.09.2018  22:17                 0 bilgi.txt
+++01.09.2018  20:30               381 coverage-hits.txt
+++01.09.2018  20:29            91.588 coverage.json
+++01.09.2018  16:27    <DIR>          CrossExchange
+++17.08.2018  14:07             1.649 CrossExchange.sln
+++01.09.2018  21:45    <DIR>          CrossExchange.Tests
+++23.08.2018  15:31             4.251 Readme.txt
+++               5 File(s)         97.869 bytes
+++               4 Dir(s)  387.355.791.360 bytes free
++-- 
++2.13.2.windows.1
++
+diff --git a/0002-bilgi-silindi.patch b/0002-bilgi-silindi.patch
+new file mode 100644
+index 0000000..ad5af58
+--- /dev/null
++++ b/0002-bilgi-silindi.patch
+@@ -0,0 +1,35 @@
++From 9db17c1482f0f8a9b25bb0eb6c15ef2bf3ef8bce Mon Sep 17 00:00:00 2001
++From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
++Date: Sat, 1 Sep 2018 22:34:46 +0300
++Subject: [PATCH 2/4] bilgi silindi
++
++---
++ bilgi.txt | 16 ----------------
++ 1 file changed, 16 deletions(-)
++ delete mode 100644 bilgi.txt
++
++diff --git a/bilgi.txt b/bilgi.txt
++deleted file mode 100644
++index 295043c..0000000
++--- a/bilgi.txt
+++++ /dev/null
++@@ -1,16 +0,0 @@
++- Volume in drive C has no label.
++- Volume Serial Number is 20BD-9036
++-
++- Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange
++-
++-01.09.2018  22:17    <DIR>          .
++-01.09.2018  22:17    <DIR>          ..
++-01.09.2018  22:17                 0 bilgi.txt
++-01.09.2018  20:30               381 coverage-hits.txt
++-01.09.2018  20:29            91.588 coverage.json
++-01.09.2018  16:27    <DIR>          CrossExchange
++-17.08.2018  14:07             1.649 CrossExchange.sln
++-01.09.2018  21:45    <DIR>          CrossExchange.Tests
++-23.08.2018  15:31             4.251 Readme.txt
++-               5 File(s)         97.869 bytes
++-               4 Dir(s)  387.355.791.360 bytes free
++-- 
++2.13.2.windows.1
++
+diff --git a/0003-.patch b/0003-.patch
+new file mode 100644
+index 0000000..fa79ff3
+--- /dev/null
++++ b/0003-.patch
+@@ -0,0 +1,29 @@
++From c9d2bb17c484a2247b216b48c6f3247290bd7d84 Mon Sep 17 00:00:00 2001
++From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
++Date: Sat, 1 Sep 2018 22:52:04 +0300
++Subject: [PATCH 3/4] -
++
++---
++ CrossExchange/Startup.cs                  | 1 +
++ cross-exchange-dotnet_ibrahimyazici.patch | 0
++ 2 files changed, 1 insertion(+)
++ create mode 100644 cross-exchange-dotnet_ibrahimyazici.patch
++
++diff --git a/CrossExchange/Startup.cs b/CrossExchange/Startup.cs
++index f04ed6b..ae42270 100644
++--- a/CrossExchange/Startup.cs
+++++ b/CrossExchange/Startup.cs
++@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
++ 
++ namespace CrossExchange
++ {
+++    //comment1
++     public class Startup
++     {
++         public Startup(IConfiguration configuration)
++diff --git a/cross-exchange-dotnet_ibrahimyazici.patch b/cross-exchange-dotnet_ibrahimyazici.patch
++new file mode 100644
++index 0000000..e69de29
++-- 
++2.13.2.windows.1
++
+diff --git a/0004-commit1.patch b/0004-commit1.patch
+new file mode 100644
+index 0000000..fdc020e
+--- /dev/null
++++ b/0004-commit1.patch
+@@ -0,0 +1,38 @@
++From dc6542da52804d474e278437d9213f5181a4d520 Mon Sep 17 00:00:00 2001
++From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
++Date: Sat, 1 Sep 2018 22:56:43 +0300
++Subject: [PATCH 4/4] commit1
++
++---
++ 1.txt | 19 +++++++++++++++++++
++ 1 file changed, 19 insertions(+)
++ create mode 100644 1.txt
++
++diff --git a/1.txt b/1.txt
++new file mode 100644
++index 0000000..bc0becd
++--- /dev/null
+++++ b/1.txt
++@@ -0,0 +1,19 @@
+++ Volume in drive C has no label.
+++ Volume Serial Number is 20BD-9036
+++
+++ Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange\crossexchange
+++
+++01.09.2018  22:56    <DIR>          .
+++01.09.2018  22:56    <DIR>          ..
+++01.09.2018  22:30               392 .gitignore
+++01.09.2018  22:56                 0 1.txt
+++01.09.2018  22:30               381 coverage-hits.txt
+++01.09.2018  22:30            91.588 coverage.json
+++01.09.2018  22:49                 0 cross-exchange-dotnet_ibrahimyazici.patch
+++01.09.2018  22:42    <DIR>          CrossExchange
+++01.09.2018  22:30             1.649 CrossExchange.sln
+++01.09.2018  22:38    <DIR>          CrossExchange.Tests
+++01.09.2018  22:55                 0 ibrahim.patch
+++01.09.2018  22:30             4.251 Readme.txt
+++               8 File(s)         98.261 bytes
+++               4 Dir(s)  387.284.021.248 bytes free
++-- 
++2.13.2.windows.1
++
+diff --git a/1.txt b/1.txt
+deleted file mode 100644
+index bc0becd..0000000
+--- a/1.txt
++++ /dev/null
+@@ -1,19 +0,0 @@
+- Volume in drive C has no label.
+- Volume Serial Number is 20BD-9036
+-
+- Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange\crossexchange
+-
+-01.09.2018  22:56    <DIR>          .
+-01.09.2018  22:56    <DIR>          ..
+-01.09.2018  22:30               392 .gitignore
+-01.09.2018  22:56                 0 1.txt
+-01.09.2018  22:30               381 coverage-hits.txt
+-01.09.2018  22:30            91.588 coverage.json
+-01.09.2018  22:49                 0 cross-exchange-dotnet_ibrahimyazici.patch
+-01.09.2018  22:42    <DIR>          CrossExchange
+-01.09.2018  22:30             1.649 CrossExchange.sln
+-01.09.2018  22:38    <DIR>          CrossExchange.Tests
+-01.09.2018  22:55                 0 ibrahim.patch
+-01.09.2018  22:30             4.251 Readme.txt
+-               8 File(s)         98.261 bytes
+-               4 Dir(s)  387.284.021.248 bytes free
+diff --git a/CrossExchange.Tests/CrossExchange.Tests.csproj b/CrossExchange.Tests/CrossExchange.Tests.csproj
+index 435191c..a821eaf 100644
+--- a/CrossExchange.Tests/CrossExchange.Tests.csproj
++++ b/CrossExchange.Tests/CrossExchange.Tests.csproj
+@@ -7,6 +7,7 @@
+   </PropertyGroup>
+ 
+   <ItemGroup>
++    <PackageReference Include="Microsoft.CodeCoverage" Version="15.8.0" />
+     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0" />
+     <DotNetCliToolReference Include="MiniCover" Version="2.0.0-ci-20180304114938" />
+     <PackageReference Include="Moq" Version="4.9.0" />
+diff --git a/CrossExchange.Tests/PortfolioControllerTests.cs b/CrossExchange.Tests/PortfolioControllerTests.cs
+new file mode 100644
+index 0000000..a3f8552
+--- /dev/null
++++ b/CrossExchange.Tests/PortfolioControllerTests.cs
+@@ -0,0 +1,75 @@
++using System;
++using System.Threading.Tasks;
++using CrossExchange.Controller;
++using Microsoft.AspNetCore.Mvc;
++using NUnit.Framework;
++using Moq;
++using System.Collections.Generic;
++using System.Linq;
++
++namespace CrossExchange.Tests
++{
++    public class PortfolioControllerTests
++    {
++        private readonly Mock<IPortfolioRepository> _portfolioRepositoryMock = new Mock<IPortfolioRepository>();
++
++        private readonly Mock<ITradeRepository> _tradeRepositoryMock = new Mock<ITradeRepository>();
++
++        private readonly Mock<IShareRepository> _shareRepositoryMock = new Mock<IShareRepository>();
++
++        private readonly PortfolioController _portfolioController;
++
++        public PortfolioControllerTests()
++        {
++            _portfolioController = new PortfolioController(_shareRepositoryMock.Object, _tradeRepositoryMock.Object, _portfolioRepositoryMock.Object);
++        }
++
++        [Test]
++        public async Task Post_ShouldInsertPortfolio()
++        {
++         
++           Portfolio p=new Portfolio()
++            {
++                Id = 1,
++                Name = "test"
++            };
++          
++            // Arrange
++
++            // Act
++            var result = await _portfolioController.Post(p);
++
++            // Assert
++            Assert.NotNull(result);
++
++            var createdResult = result as CreatedResult;
++            Assert.NotNull(createdResult);
++            Assert.AreEqual(201, createdResult.StatusCode);
++        }
++
++        [Test]
++        public async Task Get_ShouldGetPortfolioById()
++        {
++            List<Portfolio> portfolios = new List<Portfolio>();
++            portfolios.Add(new Portfolio()
++            {
++                Id = 1,
++                Name = "test"
++            });
++            _portfolioRepositoryMock.Setup(mr => mr.Query()).Returns(portfolios.AsQueryable());
++
++            // Arrange
++
++            // Act
++            var result = await _portfolioController.GetPortfolioInfo(1);
++
++            // Assert
++            Assert.NotNull(result);
++            var okResult = result as OkObjectResult;
++            Assert.NotNull(okResult);
++            var porfRes = okResult.Value as Portfolio;
++            Assert.AreEqual("test", porfRes.Name);
++        }
++
++    }
++}
+diff --git a/CrossExchange.Tests/ShareControllerTests.cs b/CrossExchange.Tests/ShareControllerTests.cs
+index 3f2f17d..37760f6 100644
+--- a/CrossExchange.Tests/ShareControllerTests.cs
++++ b/CrossExchange.Tests/ShareControllerTests.cs
+@@ -4,6 +4,8 @@ using CrossExchange.Controller;
+ using Microsoft.AspNetCore.Mvc;
+ using NUnit.Framework;
+ using Moq;
++using System.Collections.Generic;
++using System.Linq;
+ 
+ namespace CrossExchange.Tests
+ {
+@@ -40,6 +42,31 @@ namespace CrossExchange.Tests
+             Assert.NotNull(createdResult);
+             Assert.AreEqual(201, createdResult.StatusCode);
+         }
+-        
++
++        [Test]
++        public async Task Get_ShouldGetHourlySharePrices()
++        {
++            List<HourlyShareRate> rates = new List<HourlyShareRate>();
++            rates.Add(new HourlyShareRate()
++            {
++                Symbol = "CBI",
++                Rate = 330.0M,
++                TimeStamp = new DateTime(2018, 08, 17, 5, 0, 0)
++            });
++            _shareRepositoryMock.Setup(mr => mr.Query()).Returns(rates.AsQueryable());
++
++            // Arrange
++
++            // Act
++            var result = await _shareController.Get("CBI");
++
++            // Assert
++            Assert.NotNull(result);
++            var okResult = result as OkObjectResult;
++            Assert.NotNull(okResult);
++            var list = okResult.Value as List<HourlyShareRate>;
++            Assert.AreEqual(330.0M, list[0].Rate);
++        }
++
+     }
+ }
+diff --git a/CrossExchange.Tests/TradeControllerTest.cs b/CrossExchange.Tests/TradeControllerTest.cs
+index 26516ee..c72abc1 100644
+--- a/CrossExchange.Tests/TradeControllerTest.cs
++++ b/CrossExchange.Tests/TradeControllerTest.cs
+@@ -4,6 +4,9 @@ using CrossExchange.Controller;
+ using Microsoft.AspNetCore.Mvc;
+ using NUnit.Framework;
+ using Moq;
++using Microsoft.EntityFrameworkCore;
++using System.Linq;
++using System.Collections.Generic;
+ 
+ namespace CrossExchange.Tests
+ {
+@@ -17,58 +20,113 @@ namespace CrossExchange.Tests
+ 
+ 		private readonly TradeController _tradeController;
+ 
+-		private readonly ShareController _shareController;
+-
+-		private readonly PortfolioController _portfolioController;
+-
+ 		public TradeControllerTest()
+         {
+-			_tradeController = new TradeController(_shareRepositoryMock.Object, _tradeRepositoryMock.Object, _portfolioRepositoryMock.Object);
+-			_shareController = new ShareController(_shareRepositoryMock.Object);
+-			_portfolioController = new PortfolioController(_shareRepositoryMock.Object, _tradeRepositoryMock.Object, _portfolioRepositoryMock.Object);
+-		}
++            _tradeController = new TradeController(_shareRepositoryMock.Object, _tradeRepositoryMock.Object, _portfolioRepositoryMock.Object);
++					}
+ 
+         [Test]
+-        public async Task Post_ShouldNotInsertTrade()
++        public async Task Post_ShouldInsertTrade()
+         {
+-			var tradeModel = new TradeModel
+-			{
+-				Symbol = "CBI",
+-				Action = "BUY",
+-				NoOfShares = 5,
+-				PortfolioId = 1
+-            };
+-
+-			// Arrange
+-
+-			// Act
+-			var hourRate = new HourlyShareRate
+-			{
+-				Id=8,
+-				Symbol = "CBI",
+-				Rate = 330.0M,
+-				TimeStamp = new DateTime(2018, 08, 17, 5, 0, 0)
+-			};
+-			var resShare = await _shareController.Post(hourRate);
+-
+-			var portfolio = new Portfolio()
+-			{
+-				Id=1,
+-				Name = "test"
+-			};
++            List<HourlyShareRate> rates = new List<HourlyShareRate>();
++            rates.Add(new HourlyShareRate()
++            {
++                Symbol = "CBI",
++                Rate = 330.0M,
++                TimeStamp = new DateTime(2018, 08, 17, 5, 0, 0)
++            });
++            _shareRepositoryMock.Setup(mr => mr.Query()).Returns(rates.AsQueryable());
+ 
+-			var resPortfolio = await _portfolioController.Post(portfolio);
++            List<Portfolio> portfolios = new List<Portfolio>();
++            portfolios.Add(new Portfolio()
++            {
++                Id = 1,
++                Name = "test"
++            });
++            _portfolioRepositoryMock.Setup(mr => mr.Query()).Returns(portfolios.AsQueryable());
++            
++            var tradeModel = new TradeModel
++            {
++                Symbol = "CBI",
++                Action = "BUY",
++                NoOfShares = 5,
++                PortfolioId = 1
++            };
+ 
+-			var result = await _tradeController.Post(tradeModel);
++            var result = await _tradeController.Post(tradeModel);
+ 			
+ 			// Assert
+ 			Assert.NotNull(result);
+-			Console.WriteLine(result.ToString());
+             var createdResult = result as CreatedResult;
+             Assert.NotNull(createdResult);
+             Assert.AreEqual(201, createdResult.StatusCode);
+-			Console.Read();
++			
++        }
++
++        [Test]
++        public async Task Post_ShouldNotInsertTrade()
++        {
++            List<HourlyShareRate> rates = new List<HourlyShareRate>();
++            rates.Add(new HourlyShareRate()
++            {
++                Symbol = "CBI",
++                Rate = 330.0M,
++                TimeStamp = new DateTime(2018, 08, 17, 5, 0, 0)
++            });
++            _shareRepositoryMock.Setup(mr => mr.Query()).Returns(rates.AsQueryable());
++
++            List<Portfolio> portfolios = new List<Portfolio>();
++            portfolios.Add(new Portfolio()
++            {
++                Id = 1,
++                Name = "test"
++            });
++            _portfolioRepositoryMock.Setup(mr => mr.Query()).Returns(portfolios.AsQueryable());
++
++            var tradeModel = new TradeModel
++            {
++                Symbol = "CBI",
++                Action = "SELL",
++                NoOfShares = 5,
++                PortfolioId = 1
++            };
++
++            var result = await _tradeController.Post(tradeModel);
++
++            // Assert
++            Assert.NotNull(result);
++            var BadRequestResult = result as BadRequestObjectResult;
++            Assert.NotNull(BadRequestResult);
++            Assert.AreEqual(400, BadRequestResult.StatusCode);
++
++        }
++
++        [Test]
++        public async Task Get_ShouldGetAllTrades()
++        {
++            List<Trade> trades = new List<Trade>();
++            trades.Add(new Trade()
++            {
++                Action = "BUY",
++                NoOfShares = 5,
++                PortfolioId = 1,
++                Price = 300,
++                Symbol = "CBI"
++            });
++            _tradeRepositoryMock.Setup(mr => mr.Query()).Returns(trades.AsQueryable());
++
++            // Arrange
++
++            // Act
++            var result = await _tradeController.GetAllTradings(1);
++
++            // Assert
++            Assert.NotNull(result);
++            var okResult = result as OkObjectResult;
++            Assert.NotNull(okResult);
++            var list = okResult.Value as List<Trade>;
++            Assert.AreEqual("CBI", list[0].Symbol);
++            Assert.AreEqual("BUY", list[0].Action);
+         }
+-        
+     }
+ }
+diff --git a/CrossExchange/Controller/PortfolioController.cs b/CrossExchange/Controller/PortfolioController.cs
+index bf2f8d4..c2aeb64 100644
+--- a/CrossExchange/Controller/PortfolioController.cs
++++ b/CrossExchange/Controller/PortfolioController.cs
+@@ -17,7 +17,7 @@ namespace CrossExchange.Controller
+         [HttpGet("{portFolioid}")]
+         public async Task<IActionResult> GetPortfolioInfo([FromRoute]int portFolioid)
+         {
+-            var portfolio = _portfolioRepository.GetAll().Where(x => x.Id.Equals(portFolioid));
++            var portfolio = _portfolioRepository.Query().Where(x => x.Id.Equals(portFolioid)).FirstOrDefault();
+             
+             return Ok(portfolio);
+         }
+diff --git a/CrossExchange/Controller/TradeController.cs b/CrossExchange/Controller/TradeController.cs
+index 3cd44d5..25b59b2 100644
+--- a/CrossExchange/Controller/TradeController.cs
++++ b/CrossExchange/Controller/TradeController.cs
+@@ -30,7 +30,7 @@ namespace CrossExchange.Controller
+         [HttpGet("{portfolioid}")]
+         public async Task<IActionResult> GetAllTradings([FromRoute]int portFolioid)
+         {
+-            var trade = _tradeRepository.Query().Where(x => x.PortfolioId.Equals(portFolioid));
++            var trade = _tradeRepository.Query().Where(x => x.PortfolioId.Equals(portFolioid)).ToList();
+             return Ok(trade);
+         }
+ 
+diff --git a/CrossExchange/CrossExchange.csproj b/CrossExchange/CrossExchange.csproj
+index 3f1f557..bdca427 100644
+--- a/CrossExchange/CrossExchange.csproj
++++ b/CrossExchange/CrossExchange.csproj
+@@ -4,6 +4,7 @@
+   </PropertyGroup>
+   <ItemGroup>
+     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
++    <PackageReference Include="Microsoft.CodeCoverage" Version="15.8.0" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.0" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+diff --git a/coverage-hits.txt b/coverage-hits.txt
+index 3514159..50f5f17 100644
+--- a/coverage-hits.txt
++++ b/coverage-hits.txt
+@@ -25,31 +25,15 @@
+ 92
+ 93
+ 91
+-63
+-69
+-65
+-67
+ 41
+ 43
+ 39
+-118
+-122
+-120
+-124
+-106
+-121
+-125
+-36
+ 45
+ 47
+-98
+-102
+-100
+-104
+-90
+-101
+-105
+-44
++63
++69
++65
++67
+ 155
+ 174
+ 157
+@@ -73,10 +57,27 @@
+ 158
+ 177
+ 126
++40
++52
++38
+ 159
+ 178
+-130
+-160
+-179
+ 161
+ 180
++130
++44
++58
++162
++181
++164
++183
++42
++57
++165
++184
++60
++172
++191
++128
++173
++192
+diff --git a/coverage.json b/coverage.json
+index 6714ee3..9660fd9 100644
+--- a/coverage.json
++++ b/coverage.json
+@@ -1,8 +1,8 @@
+ {
+-  "SourcePath": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\",
+-  "HitsFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\coverage-hits.txt",
++  "SourcePath": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\",
++  "HitsFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\coverage-hits.txt",
+   "ExtraAssemblies": [
+-    "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\dotnet-minicover.dll"
++    "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\dotnet-minicover.dll"
+   ],
+   "Assemblies": [
+     {
+@@ -359,8 +359,8 @@
+               "Id": 121,
+               "StartLine": 43,
+               "EndLine": 43,
+-              "StartColumn": 13,
+-              "EndColumn": 56,
++              "StartColumn": 4,
++              "EndColumn": 47,
+               "Class": "CrossExchange.Controller.ShareController/<Post>d__7",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.ShareController/<Post>d__7::MoveNext()",
+@@ -403,8 +403,8 @@
+               "Id": 125,
+               "StartLine": 43,
+               "EndLine": 43,
+-              "StartColumn": 13,
+-              "EndColumn": 56,
++              "StartColumn": 4,
++              "EndColumn": 47,
+               "Class": "CrossExchange.Controller.ShareController/<Post>d__7",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.ShareController/<Post>d__7::MoveNext()",
+@@ -526,8 +526,8 @@
+             },
+             {
+               "Id": 136,
+-              "StartLine": 98,
+-              "EndLine": 98,
++              "StartLine": 99,
++              "EndLine": 99,
+               "StartColumn": 4,
+               "EndColumn": 26,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -537,8 +537,8 @@
+             },
+             {
+               "Id": 137,
+-              "StartLine": 100,
+-              "EndLine": 100,
++              "StartLine": 101,
++              "EndLine": 101,
+               "StartColumn": 4,
+               "EndColumn": 30,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -548,8 +548,8 @@
+             },
+             {
+               "Id": 138,
+-              "StartLine": 101,
+-              "EndLine": 101,
++              "StartLine": 102,
++              "EndLine": 102,
+               "StartColumn": 4,
+               "EndColumn": 38,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -559,8 +559,8 @@
+             },
+             {
+               "Id": 139,
+-              "StartLine": 102,
+-              "EndLine": 102,
++              "StartLine": 103,
++              "EndLine": 103,
+               "StartColumn": 4,
+               "EndColumn": 18,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -570,8 +570,8 @@
+             },
+             {
+               "Id": 140,
+-              "StartLine": 103,
+-              "EndLine": 103,
++              "StartLine": 104,
++              "EndLine": 104,
+               "StartColumn": 4,
+               "EndColumn": 30,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -581,8 +581,8 @@
+             },
+             {
+               "Id": 141,
+-              "StartLine": 104,
+-              "EndLine": 104,
++              "StartLine": 105,
++              "EndLine": 105,
+               "StartColumn": 4,
+               "EndColumn": 40,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -592,8 +592,8 @@
+             },
+             {
+               "Id": 142,
+-              "StartLine": 105,
+-              "EndLine": 105,
++              "StartLine": 106,
++              "EndLine": 106,
+               "StartColumn": 4,
+               "EndColumn": 15,
+               "Class": "CrossExchange.Controller.TradeController",
+@@ -647,8 +647,8 @@
+             },
+             {
+               "Id": 147,
+-              "StartLine": 82,
+-              "EndLine": 82,
++              "StartLine": 83,
++              "EndLine": 83,
+               "StartColumn": 36,
+               "EndColumn": 51,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -658,8 +658,8 @@
+             },
+             {
+               "Id": 148,
+-              "StartLine": 82,
+-              "EndLine": 82,
++              "StartLine": 83,
++              "EndLine": 83,
+               "StartColumn": 36,
+               "EndColumn": 51,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -669,8 +669,8 @@
+             },
+             {
+               "Id": 149,
+-              "StartLine": 82,
+-              "EndLine": 82,
++              "StartLine": 83,
++              "EndLine": 83,
+               "StartColumn": 60,
+               "EndColumn": 72,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -680,8 +680,8 @@
+             },
+             {
+               "Id": 150,
+-              "StartLine": 82,
+-              "EndLine": 82,
++              "StartLine": 83,
++              "EndLine": 83,
+               "StartColumn": 60,
+               "EndColumn": 72,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -691,8 +691,8 @@
+             },
+             {
+               "Id": 151,
+-              "StartLine": 83,
+-              "EndLine": 83,
++              "StartLine": 84,
++              "EndLine": 84,
+               "StartColumn": 39,
+               "EndColumn": 57,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -702,8 +702,8 @@
+             },
+             {
+               "Id": 152,
+-              "StartLine": 83,
+-              "EndLine": 83,
++              "StartLine": 84,
++              "EndLine": 84,
+               "StartColumn": 39,
+               "EndColumn": 57,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -713,8 +713,8 @@
+             },
+             {
+               "Id": 153,
+-              "StartLine": 83,
+-              "EndLine": 83,
++              "StartLine": 84,
++              "EndLine": 84,
+               "StartColumn": 66,
+               "EndColumn": 78,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -724,8 +724,8 @@
+             },
+             {
+               "Id": 154,
+-              "StartLine": 83,
+-              "EndLine": 83,
++              "StartLine": 84,
++              "EndLine": 84,
+               "StartColumn": 66,
+               "EndColumn": 78,
+               "Class": "CrossExchange.Controller.TradeController/<>c",
+@@ -779,10 +779,10 @@
+             },
+             {
+               "Id": 159,
+-              "StartLine": 68,
+-              "EndLine": 68,
++              "StartLine": 69,
++              "EndLine": 69,
+               "StartColumn": 4,
+-              "EndColumn": 109,
++              "EndColumn": 22,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.TradeController/<Post>d__14::MoveNext()",
+@@ -792,28 +792,28 @@
+               "Id": 160,
+               "StartLine": 70,
+               "EndLine": 70,
+-              "StartColumn": 4,
+-              "EndColumn": 22,
++              "StartColumn": 5,
++              "EndColumn": 55,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.TradeController/<Post>d__14::MoveNext()",
+-              "Instruction": "IL_0207: ldarg "
++              "Instruction": "IL_0168: ldarg "
+             },
+             {
+               "Id": 161,
+-              "StartLine": 71,
+-              "EndLine": 71,
+-              "StartColumn": 5,
+-              "EndColumn": 55,
++              "StartLine": 72,
++              "EndLine": 72,
++              "StartColumn": 4,
++              "EndColumn": 109,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.TradeController/<Post>d__14::MoveNext()",
+-              "Instruction": "IL_0216: ldarg "
++              "Instruction": "IL_017e: ldarg "
+             },
+             {
+               "Id": 162,
+-              "StartLine": 73,
+-              "EndLine": 73,
++              "StartLine": 74,
++              "EndLine": 74,
+               "StartColumn": 4,
+               "EndColumn": 26,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -823,8 +823,8 @@
+             },
+             {
+               "Id": 163,
+-              "StartLine": 74,
+-              "EndLine": 74,
++              "StartLine": 75,
++              "EndLine": 75,
+               "StartColumn": 5,
+               "EndColumn": 60,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -834,8 +834,8 @@
+             },
+             {
+               "Id": 164,
+-              "StartLine": 76,
+-              "EndLine": 76,
++              "StartLine": 77,
++              "EndLine": 77,
+               "StartColumn": 4,
+               "EndColumn": 29,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -845,8 +845,8 @@
+             },
+             {
+               "Id": 165,
+-              "StartLine": 78,
+-              "EndLine": 78,
++              "StartLine": 79,
++              "EndLine": 79,
+               "StartColumn": 4,
+               "EndColumn": 31,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -856,8 +856,8 @@
+             },
+             {
+               "Id": 166,
+-              "StartLine": 80,
+-              "EndLine": 80,
++              "StartLine": 81,
++              "EndLine": 81,
+               "StartColumn": 5,
+               "EndColumn": 125,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -867,8 +867,8 @@
+             },
+             {
+               "Id": 167,
+-              "StartLine": 82,
+-              "EndLine": 82,
++              "StartLine": 83,
++              "EndLine": 83,
+               "StartColumn": 5,
+               "EndColumn": 74,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -878,8 +878,8 @@
+             },
+             {
+               "Id": 168,
+-              "StartLine": 83,
+-              "EndLine": 83,
++              "StartLine": 84,
++              "EndLine": 84,
+               "StartColumn": 5,
+               "EndColumn": 80,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -889,8 +889,8 @@
+             },
+             {
+               "Id": 169,
+-              "StartLine": 85,
+-              "EndLine": 85,
++              "StartLine": 86,
++              "EndLine": 86,
+               "StartColumn": 5,
+               "EndColumn": 49,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -900,8 +900,8 @@
+             },
+             {
+               "Id": 170,
+-              "StartLine": 87,
+-              "EndLine": 87,
++              "StartLine": 88,
++              "EndLine": 88,
+               "StartColumn": 6,
+               "EndColumn": 50,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -911,8 +911,8 @@
+             },
+             {
+               "Id": 171,
+-              "StartLine": 88,
+-              "EndLine": 88,
++              "StartLine": 89,
++              "EndLine": 89,
+               "StartColumn": 6,
+               "EndColumn": 106,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -922,8 +922,8 @@
+             },
+             {
+               "Id": 172,
+-              "StartLine": 92,
+-              "EndLine": 92,
++              "StartLine": 93,
++              "EndLine": 93,
+               "StartColumn": 4,
+               "EndColumn": 46,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -933,8 +933,8 @@
+             },
+             {
+               "Id": 173,
+-              "StartLine": 93,
+-              "EndLine": 93,
++              "StartLine": 94,
++              "EndLine": 94,
+               "StartColumn": 4,
+               "EndColumn": 35,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -988,10 +988,10 @@
+             },
+             {
+               "Id": 178,
+-              "StartLine": 68,
+-              "EndLine": 68,
++              "StartLine": 69,
++              "EndLine": 69,
+               "StartColumn": 4,
+-              "EndColumn": 109,
++              "EndColumn": 22,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.TradeController/<Post>d__14::MoveNext()",
+@@ -1001,28 +1001,28 @@
+               "Id": 179,
+               "StartLine": 70,
+               "EndLine": 70,
+-              "StartColumn": 4,
+-              "EndColumn": 22,
++              "StartColumn": 5,
++              "EndColumn": 55,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.TradeController/<Post>d__14::MoveNext()",
+-              "Instruction": "IL_0207: ldarg "
++              "Instruction": "IL_0168: ldarg "
+             },
+             {
+               "Id": 180,
+-              "StartLine": 71,
+-              "EndLine": 71,
+-              "StartColumn": 5,
+-              "EndColumn": 55,
++              "StartLine": 72,
++              "EndLine": 72,
++              "StartColumn": 4,
++              "EndColumn": 109,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+               "Method": "MoveNext",
+               "MethodFullName": "System.Void CrossExchange.Controller.TradeController/<Post>d__14::MoveNext()",
+-              "Instruction": "IL_0216: ldarg "
++              "Instruction": "IL_017e: ldarg "
+             },
+             {
+               "Id": 181,
+-              "StartLine": 73,
+-              "EndLine": 73,
++              "StartLine": 74,
++              "EndLine": 74,
+               "StartColumn": 4,
+               "EndColumn": 26,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1032,8 +1032,8 @@
+             },
+             {
+               "Id": 182,
+-              "StartLine": 74,
+-              "EndLine": 74,
++              "StartLine": 75,
++              "EndLine": 75,
+               "StartColumn": 5,
+               "EndColumn": 60,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1043,8 +1043,8 @@
+             },
+             {
+               "Id": 183,
+-              "StartLine": 76,
+-              "EndLine": 76,
++              "StartLine": 77,
++              "EndLine": 77,
+               "StartColumn": 4,
+               "EndColumn": 29,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1054,8 +1054,8 @@
+             },
+             {
+               "Id": 184,
+-              "StartLine": 78,
+-              "EndLine": 78,
++              "StartLine": 79,
++              "EndLine": 79,
+               "StartColumn": 4,
+               "EndColumn": 31,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1065,8 +1065,8 @@
+             },
+             {
+               "Id": 185,
+-              "StartLine": 80,
+-              "EndLine": 80,
++              "StartLine": 81,
++              "EndLine": 81,
+               "StartColumn": 5,
+               "EndColumn": 125,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1076,8 +1076,8 @@
+             },
+             {
+               "Id": 186,
+-              "StartLine": 82,
+-              "EndLine": 82,
++              "StartLine": 83,
++              "EndLine": 83,
+               "StartColumn": 5,
+               "EndColumn": 74,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1087,8 +1087,8 @@
+             },
+             {
+               "Id": 187,
+-              "StartLine": 83,
+-              "EndLine": 83,
++              "StartLine": 84,
++              "EndLine": 84,
+               "StartColumn": 5,
+               "EndColumn": 80,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1098,8 +1098,8 @@
+             },
+             {
+               "Id": 188,
+-              "StartLine": 85,
+-              "EndLine": 85,
++              "StartLine": 86,
++              "EndLine": 86,
+               "StartColumn": 5,
+               "EndColumn": 49,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1109,8 +1109,8 @@
+             },
+             {
+               "Id": 189,
+-              "StartLine": 87,
+-              "EndLine": 87,
++              "StartLine": 88,
++              "EndLine": 88,
+               "StartColumn": 6,
+               "EndColumn": 50,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1120,8 +1120,8 @@
+             },
+             {
+               "Id": 190,
+-              "StartLine": 88,
+-              "EndLine": 88,
++              "StartLine": 89,
++              "EndLine": 89,
+               "StartColumn": 6,
+               "EndColumn": 106,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1131,8 +1131,8 @@
+             },
+             {
+               "Id": 191,
+-              "StartLine": 92,
+-              "EndLine": 92,
++              "StartLine": 93,
++              "EndLine": 93,
+               "StartColumn": 4,
+               "EndColumn": 46,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -1142,8 +1142,8 @@
+             },
+             {
+               "Id": 192,
+-              "StartLine": 93,
+-              "EndLine": 93,
++              "StartLine": 94,
++              "EndLine": 94,
+               "StartColumn": 4,
+               "EndColumn": 35,
+               "Class": "CrossExchange.Controller.TradeController/<Post>d__14",
+@@ -2179,10 +2179,10 @@
+       },
+       "Locations": [
+         {
+-          "File": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.dll",
+-          "BackupFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.uninstrumented.dll",
+-          "PdbFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.pdb",
+-          "BackupPdbFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.uninstrumented.pdb"
++          "File": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.dll",
++          "BackupFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.uninstrumented.dll",
++          "PdbFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.pdb",
++          "BackupPdbFile": "C:\\Users\\ibrahim\\Desktop\\CrossExchange\\CrossExchange\\crossexchange\\CrossExchange.Tests\\bin\\Debug\\netcoreapp2.0\\CrossExchange.uninstrumented.pdb"
+         }
+       ]
+     }
+diff --git a/cross-exchange-dotnet_ibrahimyazici.patch b/cross-exchange-dotnet_ibrahimyazici.patch
+deleted file mode 100644
+index e69de29..0000000
+-- 
+2.17.1.windows.2
+
+
+From cb0e322a3eac9d384833aab7996076c3a74e7ba8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+Date: Sun, 2 Sep 2018 14:37:03 +0300
+Subject: [PATCH 4/4] commit
+
+---
+ 0001-bilgi.txt-was-added.patch | 35 -------------------------------
+ 0002-bilgi-silindi.patch       | 35 -------------------------------
+ 0003-.patch                    | 29 --------------------------
+ 0004-commit1.patch             | 38 ----------------------------------
+ 4 files changed, 137 deletions(-)
+ delete mode 100644 0001-bilgi.txt-was-added.patch
+ delete mode 100644 0002-bilgi-silindi.patch
+ delete mode 100644 0003-.patch
+ delete mode 100644 0004-commit1.patch
+
+diff --git a/0001-bilgi.txt-was-added.patch b/0001-bilgi.txt-was-added.patch
+deleted file mode 100644
+index 8636cf7..0000000
+--- a/0001-bilgi.txt-was-added.patch
++++ /dev/null
+@@ -1,35 +0,0 @@
+-From 133d096a0cdb286d18e03d27f5e92c2bcebf1dbb Mon Sep 17 00:00:00 2001
+-From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+-Date: Sat, 1 Sep 2018 22:20:51 +0300
+-Subject: [PATCH 1/4] bilgi.txt was added!
+-
+----
+- bilgi.txt | 16 ++++++++++++++++
+- 1 file changed, 16 insertions(+)
+- create mode 100644 bilgi.txt
+-
+-diff --git a/bilgi.txt b/bilgi.txt
+-new file mode 100644
+-index 0000000..295043c
+---- /dev/null
+-+++ b/bilgi.txt
+-@@ -0,0 +1,16 @@
+-+ Volume in drive C has no label.
+-+ Volume Serial Number is 20BD-9036
+-+
+-+ Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange
+-+
+-+01.09.2018  22:17    <DIR>          .
+-+01.09.2018  22:17    <DIR>          ..
+-+01.09.2018  22:17                 0 bilgi.txt
+-+01.09.2018  20:30               381 coverage-hits.txt
+-+01.09.2018  20:29            91.588 coverage.json
+-+01.09.2018  16:27    <DIR>          CrossExchange
+-+17.08.2018  14:07             1.649 CrossExchange.sln
+-+01.09.2018  21:45    <DIR>          CrossExchange.Tests
+-+23.08.2018  15:31             4.251 Readme.txt
+-+               5 File(s)         97.869 bytes
+-+               4 Dir(s)  387.355.791.360 bytes free
+--- 
+-2.13.2.windows.1
+-
+diff --git a/0002-bilgi-silindi.patch b/0002-bilgi-silindi.patch
+deleted file mode 100644
+index ad5af58..0000000
+--- a/0002-bilgi-silindi.patch
++++ /dev/null
+@@ -1,35 +0,0 @@
+-From 9db17c1482f0f8a9b25bb0eb6c15ef2bf3ef8bce Mon Sep 17 00:00:00 2001
+-From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+-Date: Sat, 1 Sep 2018 22:34:46 +0300
+-Subject: [PATCH 2/4] bilgi silindi
+-
+----
+- bilgi.txt | 16 ----------------
+- 1 file changed, 16 deletions(-)
+- delete mode 100644 bilgi.txt
+-
+-diff --git a/bilgi.txt b/bilgi.txt
+-deleted file mode 100644
+-index 295043c..0000000
+---- a/bilgi.txt
+-+++ /dev/null
+-@@ -1,16 +0,0 @@
+-- Volume in drive C has no label.
+-- Volume Serial Number is 20BD-9036
+--
+-- Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange
+--
+--01.09.2018  22:17    <DIR>          .
+--01.09.2018  22:17    <DIR>          ..
+--01.09.2018  22:17                 0 bilgi.txt
+--01.09.2018  20:30               381 coverage-hits.txt
+--01.09.2018  20:29            91.588 coverage.json
+--01.09.2018  16:27    <DIR>          CrossExchange
+--17.08.2018  14:07             1.649 CrossExchange.sln
+--01.09.2018  21:45    <DIR>          CrossExchange.Tests
+--23.08.2018  15:31             4.251 Readme.txt
+--               5 File(s)         97.869 bytes
+--               4 Dir(s)  387.355.791.360 bytes free
+--- 
+-2.13.2.windows.1
+-
+diff --git a/0003-.patch b/0003-.patch
+deleted file mode 100644
+index fa79ff3..0000000
+--- a/0003-.patch
++++ /dev/null
+@@ -1,29 +0,0 @@
+-From c9d2bb17c484a2247b216b48c6f3247290bd7d84 Mon Sep 17 00:00:00 2001
+-From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+-Date: Sat, 1 Sep 2018 22:52:04 +0300
+-Subject: [PATCH 3/4] -
+-
+----
+- CrossExchange/Startup.cs                  | 1 +
+- cross-exchange-dotnet_ibrahimyazici.patch | 0
+- 2 files changed, 1 insertion(+)
+- create mode 100644 cross-exchange-dotnet_ibrahimyazici.patch
+-
+-diff --git a/CrossExchange/Startup.cs b/CrossExchange/Startup.cs
+-index f04ed6b..ae42270 100644
+---- a/CrossExchange/Startup.cs
+-+++ b/CrossExchange/Startup.cs
+-@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
+- 
+- namespace CrossExchange
+- {
+-+    //comment1
+-     public class Startup
+-     {
+-         public Startup(IConfiguration configuration)
+-diff --git a/cross-exchange-dotnet_ibrahimyazici.patch b/cross-exchange-dotnet_ibrahimyazici.patch
+-new file mode 100644
+-index 0000000..e69de29
+--- 
+-2.13.2.windows.1
+-
+diff --git a/0004-commit1.patch b/0004-commit1.patch
+deleted file mode 100644
+index fdc020e..0000000
+--- a/0004-commit1.patch
++++ /dev/null
+@@ -1,38 +0,0 @@
+-From dc6542da52804d474e278437d9213f5181a4d520 Mon Sep 17 00:00:00 2001
+-From: =?UTF-8?q?=C4=B0brahim=20Yaz=C4=B1c=C4=B1?= <yzcibrahim@gmail.com>
+-Date: Sat, 1 Sep 2018 22:56:43 +0300
+-Subject: [PATCH 4/4] commit1
+-
+----
+- 1.txt | 19 +++++++++++++++++++
+- 1 file changed, 19 insertions(+)
+- create mode 100644 1.txt
+-
+-diff --git a/1.txt b/1.txt
+-new file mode 100644
+-index 0000000..bc0becd
+---- /dev/null
+-+++ b/1.txt
+-@@ -0,0 +1,19 @@
+-+ Volume in drive C has no label.
+-+ Volume Serial Number is 20BD-9036
+-+
+-+ Directory of C:\Users\ibrahim\Desktop\CrossExchange\CrossExchange\crossexchange
+-+
+-+01.09.2018  22:56    <DIR>          .
+-+01.09.2018  22:56    <DIR>          ..
+-+01.09.2018  22:30               392 .gitignore
+-+01.09.2018  22:56                 0 1.txt
+-+01.09.2018  22:30               381 coverage-hits.txt
+-+01.09.2018  22:30            91.588 coverage.json
+-+01.09.2018  22:49                 0 cross-exchange-dotnet_ibrahimyazici.patch
+-+01.09.2018  22:42    <DIR>          CrossExchange
+-+01.09.2018  22:30             1.649 CrossExchange.sln
+-+01.09.2018  22:38    <DIR>          CrossExchange.Tests
+-+01.09.2018  22:55                 0 ibrahim.patch
+-+01.09.2018  22:30             4.251 Readme.txt
+-+               8 File(s)         98.261 bytes
+-+               4 Dir(s)  387.284.021.248 bytes free
+--- 
+-2.13.2.windows.1
+-
+-- 
+2.17.1.windows.2
+
